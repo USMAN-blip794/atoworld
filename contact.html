@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AutoWorld — Contact Us</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+body{
+  background:#f6f6f6;
+  font-family:"Segoe UI", Arial, sans-serif;
+}
+
+/* INFO BOX */
+.info-box{
+  background:#ffffff;
+  border-radius:16px;
+  padding:25px;
+  box-shadow:0 8px 25px rgba(0,0,0,0.08);
+}
+
+/* FORM */
+.form-box{
+  background:#ffffff;
+  border-radius:16px;
+  padding:25px;
+  box-shadow:0 8px 25px rgba(0,0,0,0.08);
+}
+
+.form-control:focus{
+  border-color:#c9993a;
+  box-shadow:none;
+}
+
+.btn-primary{
+  background:#000;
+  border:none;
+}
+
+.btn-primary:hover{
+  background:#c9993a;
+}
+
+/* MAP */
+.map-box iframe{
+  width:100%;
+  height:320px;
+  border-radius:16px;
+  border:0;
+}
+</style>
+
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="index.html">AutoWorld</a>
+
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto">
+
+        <li class="nav-item"><a class="nav-link" href="catalog.html">Catalogue</a></li>
+        <li class="nav-item"><a class="nav-link" href="compare.html">Compare</a></li>
+        <li class="nav-item"><a class="nav-link" href="dealers.html">Dealers</a></li>
+       <li class="nav-item"><a class="nav-link" href="finance.html">Finance</a></li>
+        <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HEADER -->
+<header class="py-4 bg-light border-bottom">
+  <div class="container">
+    <h2 class="fw-bold">Contact Us</h2>
+    <p class="text-muted">We’d love to hear from you</p>
+  </div>
+</header>
+
+<!-- CONTACT SECTION -->
+<section class="py-5">
+  <div class="container">
+    <div class="row g-4">
+
+      <!-- INFO -->
+      <div class="col-md-4">
+        <div class="info-box">
+          <h5 class="fw-bold mb-3">AutoWorld Pakistan</h5>
+
+          <p><strong>📍 Address</strong><br>
+            Shahrah-e-Faisal,<br>Karachi, Pakistan
+          </p>
+
+          <p><strong>📞 Phone</strong><br>
+            +92 21 34567890
+          </p>
+
+          <p><strong>✉ Email</strong><br>
+            support@autoworld.com
+          </p>
+
+          <p><strong>🕘 Working Hours</strong><br>
+            Mon – Sat | 9:00 AM – 7:00 PM
+          </p>
+        </div>
+      </div>
+
+      <!-- FORM -->
+      <div class="col-md-8">
+        <div class="form-box">
+          <h5 class="fw-bold mb-3">Send us a Message</h5>
+
+          <div class="row g-3">
+            <div class="col-md-6">
+              <input type="text" id="name" class="form-control" placeholder="Your Name">
+            </div>
+
+            <div class="col-md-6">
+              <input type="email" id="email" class="form-control" placeholder="Your Email">
+            </div>
+
+            <div class="col-12">
+              <input type="text" id="subject" class="form-control" placeholder="Subject">
+            </div>
+
+            <div class="col-12">
+              <textarea id="message" class="form-control" rows="5" placeholder="Your Message"></textarea>
+            </div>
+
+            <div class="col-12">
+              <button id="sendBtn" class="btn btn-primary w-100">Send Message</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- MAP -->
+<section class="pb-5">
+  <div class="container">
+    <div class="map-box">
+      <iframe 
+        src="https://www.google.com/maps?q=Shahrah-e-Faisal+Karachi&output=embed" 
+        loading="lazy">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="py-4 text-center text-muted">
+  <small>© <span id="year"></span> AutoWorld — Contact Page</small>
+</footer>
+
+<!-- JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+
+document.getElementById("sendBtn").addEventListener("click", function(){
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const subject = document.getElementById("subject").value;
+  const message = document.getElementById("message").value;
+
+  if(!name || !email || !subject || !message){
+    alert("Please fill all fields");
+    return;
+  }
+
+  alert("Message sent successfully! (Backend can be added later)");
+  
+  document.getElementById("name").value = "";
+  document.getElementById("email").value = "";
+  document.getElementById("subject").value = "";
+  document.getElementById("message").value = "";
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AutoWorld — Compare Cars</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+body{background:#f5f5f5;font-family:Segoe UI,Arial}
+.compare-box{
+  background:#fff;padding:25px;border-radius:15px;
+  box-shadow:0 5px 20px rgba(0,0,0,.08)
+}
+.table th{background:#222;color:#fff}
+.car-img{
+  width:100%;height:220px;
+  object-fit:contain;background:#fff;padding:10px
+}
+</style>
+</head>
+
+<body>
+  
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="index.html">AutoWorld</a>
+
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto">
+
+        <li class="nav-item"><a class="nav-link" href="catalog.html">Catalogue</a></li>
+        <li class="nav-item"><a class="nav-link" href="compare.html">Compare</a></li>
+        <li class="nav-item"><a class="nav-link" href="dealers.html">Dealers</a></li>
+       <li class="nav-item"><a class="nav-link" href="finance.html">Finance</a></li>
+        <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<header class="py-4 bg-light border-bottom">
+  <div class="container">
+    <h2 class="fw-bold">Compare Cars</h2>
+    <p class="text-muted">Select two cars to compare</p>
+  </div>
+</header>
+
+<section class="py-4">
+<div class="container">
+<div class="compare-box">
+
+<div class="row g-3">
+  <div class="col-md-6">
+    <label>Select Car 1</label>
+    <select id="car1" class="form-select"></select>
+  </div>
+  <div class="col-md-6">
+    <label>Select Car 2</label>
+    <select id="car2" class="form-select"></select>
+  </div>
+  <div class="col-12">
+    <button class="btn btn-primary w-100 mt-3" id="compareBtn">Compare</button>
+  </div>
+</div>
+
+<hr class="my-4">
+
+<div id="result" class="d-none">
+
+<div class="row text-center mb-4">
+  <div class="col-md-6">
+    <img id="img1" class="car-img">
+    <h5 id="name1"></h5>
+  </div>
+  <div class="col-md-6">
+    <img id="img2" class="car-img">
+    <h5 id="name2"></h5>
+  </div>
+</div>
+
+<table class="table table-bordered text-center">
+<tr>
+<th>Specification</th>
+<th>Car 1</th>
+<th>Car 2</th>
+</tr>
+<tr><td>Price</td><td id="p1"></td><td id="p2"></td></tr>
+<tr><td>Transmission</td><td id="t1"></td><td id="t2"></td></tr>
+<tr><td>Fuel</td><td id="f1"></td><td id="f2"></td></tr>
+<tr><td>Model</td><td id="m1"></td><td id="m2"></td></tr>
+</table>
+
+</div>
+
+</div>
+</div>
+</section>
+
+<footer class="py-3 text-center text-muted">
+© <span id="year"></span> AutoWorld
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+document.getElementById("year").innerText=new Date().getFullYear();
+
+/* SAME DATA AS CATALOG */
+const cars={
+"Toyota Corolla":{price:"PKR 4,899,000",img:"https://cdn.pixabay.com/photo/2022/04/24/12/26/car-7153508_1280.jpg"},
+"Honda City":{price:"PKR 4,700,000",img:"https://play-lh.googleusercontent.com/7aWuowX4KbErLRjsAKAzl0l0suv1lXclvXJPM03AtasANmcBsMzOlxe5tF4Etcxr-hA=w526-h296-rw"},
+"Honda Civic":{price:"PKR 8,329,000",img:"https://i.ytimg.com/vi/XMfga2V6ZqI/maxresdefault.jpg"},
+"Hyundai Elantra":{price:"PKR 6,999,000",img:"https://i.pinimg.com/736x/9a/5b/79/9a5b792d14b8a48a21b0402700f0254e.jpg"},
+"Toyota Yaris":{price:"PKR 4,000,000",img:"https://i.pinimg.com/736x/9f/09/1a/9f091a6db4256c58c6ad5e2f52bedcc2.jpg"},
+"Toyota Fortuner":{price:"PKR 19,000,000",img:"https://i.pinimg.com/736x/16/9f/97/169f975f74c1c95aea62e97505f174f0.jpg"},
+"Toyota Prado":{price:"PKR 26,000,000",img:"https://media.istockphoto.com/id/501514704/photo/toyota-land-cruiser-prado-150.jpg"},
+"Kia Sportage":{price:"PKR 8,500,000",img:"https://images6.alphacoders.com/118/1185806.jpg"},
+"Hyundai Tucson":{price:"PKR 9,299,000",img:"https://w0.peakpx.com/wallpaper/459/666/HD-wallpaper-2022-hyundai-tucson-n-line.jpg"},
+"MG HS":{price:"PKR 8,099,000",img:"https://www.mg-center.com/assets/i/model-builder-cars/HSBlack.jpg"},
+"Suzuki Alto":{price:"PKR 2,400,000",img:"https://suzukifortmotors.com/wp-content/uploads/2020/12/Alto-Solid-White-720x466.jpg"},
+"Toyota Aqua":{price:"PKR 3,300,000",img:"https://global.toyota/pages/news/images/2021/07/19/1330/20210719_04_t_w610.jpg"},
+"Daihatsu Mira":{price:"PKR 2,800,000",img:"https://360view.3dmodels.org/zoom/Daihatsu/Daihatsu_Mira_e-S_2017_1000_0001.jpg"},
+"Suzuki Swift":{price:"PKR 4,200,000",img:"https://cache1.pakwheels.com/system/car_generation_pictures/5339/original/swift_cover.jpg"},
+"Toyota Vitz":{price:"PKR 3,000,000",img:"https://global.toyota/pages/models/images/vitz/vitz_003_s.jpg"},
+"Honda BR-V":{price:"PKR 6,429,000",img:"https://i.pinimg.com/736x/55/5f/0a/555f0ac3b64250108d1b311d10c4194a.jpg"},
+"Toyota Rush":{price:"PKR 5,800,000",img:"https://images.pexels.com/photos/2036544/pexels-photo-2036544.jpeg"},
+"DFSK Glory 580":{price:"PKR 6,300,000",img:"https://cache4.pakwheels.com/system/car_generation_pictures/7022/original/Front-Sside.jpg"},
+"Kia Stonic":{price:"PKR 7,100,000",img:"https://www.topgear.com/sites/default/files/2023/01/Large-17983-Stonic1.0T-GDi2.jpg"},
+"Proton X70":{price:"PKR 9,500,000",img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjmu1nsYnK6zuV4SjXMVmgpD3yYZA-O0F23Q&s"},
+"Mercedes S-Class":{price:"PKR 65,000,000",img:"https://images.unsplash.com/photo-1680446983373-853872fb667a"},
+"BMW 7 Series":{price:"PKR 58,000,000",img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRx1E6FNsYr_LmLlzk6RsJ_Arf0TxDPfzejEw&s"},
+"Audi A6":{price:"PKR 55,000,000",img:"https://wallpapercat.com/w/full/2/1/c/5814844.jpg"},
+"Lexus LX570":{price:"PKR 62,000,000",img:"https://w0.peakpx.com/wallpaper/652/409/HD-wallpaper-lexus-lx570.jpg"},
+"Land Cruiser V8":{price:"PKR 80,000,000",img:"https://i.pinimg.com/736x/54/bd/68/54bd68be408529c3dc1c8c8bdcc6e3b2.jpg"}
+};
+
+/* Populate dropdowns */
+for(let car in cars){
+  car1.innerHTML+=`<option value="${car}">${car}</option>`;
+  car2.innerHTML+=`<option value="${car}">${car}</option>`;
+}
+
+compareBtn.onclick=()=>{
+  if(!car1.value||!car2.value||car1.value===car2.value){
+    alert("Please select two different cars");
+    return;
+  }
+
+  img1.src=cars[car1.value].img;
+  img2.src=cars[car2.value].img;
+  name1.innerText=car1.value;
+  name2.innerText=car2.value;
+  p1.innerText=cars[car1.value].price;
+  p2.innerText=cars[car2.value].price;
+  t1.innerText="Automatic";
+  t2.innerText="Automatic";
+  f1.innerText="Petrol";
+  f2.innerText="Petrol";
+  m1.innerText="2024";
+  m2.innerText="2024";
+
+  result.classList.remove("d-none");
+};
+</script>
+
+</body>
+</html>

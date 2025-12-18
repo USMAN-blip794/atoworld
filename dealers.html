@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AutoWorld — Trusted Dealers</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+body{
+  background:#f7f7f7;
+  font-family:"Segoe UI", Arial, sans-serif;
+}
+
+.section-title{
+  font-size:30px;
+  font-weight:700;
+  margin:40px 0 20px;
+  color:#333;
+}
+
+.dealer-card{
+  background:#fff;
+  border-radius:14px;
+  overflow:hidden;
+  box-shadow:0 5px 18px rgba(0,0,0,0.08);
+  transition:0.25s;
+}
+
+.dealer-card:hover{
+  transform:translateY(-6px);
+}
+
+.dealer-img{
+  width:100%;
+  height:220px;          
+  object-fit:cover; 
+  object-position:center;
+  display:block;
+}
+
+
+.dealer-body{
+  padding:18px;
+}
+
+.dealer-body h5{
+  font-size:20px;
+  font-weight:600;
+  margin-bottom:6px;
+}
+
+.dealer-body p{
+  margin:0;
+  font-size:14px;
+}
+
+.map-box iframe{
+  width:100%;
+  height:200px;
+  border:0;
+  border-radius:10px;
+  margin-top:12px;
+}
+</style>
+
+</head>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="index.html">AutoWorld</a>
+
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="nav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="catalog.html">Catalogue</a></li>
+        <li class="nav-item"><a class="nav-link" href="compare.html">Compare</a></li>
+        <li class="nav-item"><a class="nav-link active"href="dealershtml">Dealers</a></li>
+        <li class="nav-item"><a class="nav-link" href="finance.html">Finance</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HEADER -->
+<header class="py-4 bg-light border-bottom">
+  <div class="container">
+    <h2 class="fw-bold">Trusted Dealers (Pakistan)</h2>
+    <p class="text-muted">Official dealerships in Karachi, Lahore & Islamabad</p>
+  </div>
+</header>
+
+<!-- DEALERS SECTION -->
+<section class="py-4">
+  <div class="container">
+
+    <h3 class="section-title">Karachi Dealers</h3>
+    <div class="row g-4">
+
+      <!-- KARACHI 1 -->
+      <div class="col-md-4">
+        <div class="dealer-card">
+          <img class="dealer-img" src="https://media.istockphoto.com/id/458075769/photo/toyota-dealerhsip-in-pretoria-south-africa.jpg?s=612x612&w=0&k=20&c=zL54QxtZuvbR2jtv05-VJMvR9DUOHgFEQiLbq0zg5KA=" alt="">
+          <div class="dealer-body">
+            <h5>Toyota Eastern Motors</h5>
+            <p><strong>Brand:</strong> Toyota</p>
+            <p><strong>Phone:</strong> +92 21 34567890</p>
+            <p><strong>Address:</strong> Khalid Bin Waleed Road, Karachi</p>
+
+            <div class="map-box">
+              <iframe src="https://www.google.com/maps?q=Toyota+Eastern+Motors+Karachi&output=embed"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- KARACHI 2 -->
+      <div class="col-md-4">
+        <div class="dealer-card">
+          <img class="dealer-img" src="https://media.istockphoto.com/id/157772074/photo/economical-hybrid-vehicles-on-display-at-honda-dealership.jpg?s=612x612&w=0&k=20&c=C2hK-pgUH-NVihA6rvnU-WbKSoHTwAPZUXASkJcj834=" alt="">
+          <div class="dealer-body">
+            <h5>Honda Quaid Motors</h5>
+            <p><strong>Brand:</strong> Honda</p>
+            <p><strong>Phone:</strong> +92 21 38976543</p>
+            <p><strong>Address:</strong> Shahrah-e-Faisal, Karachi</p>
+
+            <div class="map-box">
+              <iframe src="https://www.google.com/maps?q=Honda+Quaid+Motors+Karachi&output=embed"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- KARACHI 3 -->
+      <div class="col-md-4">
+        <div class="dealer-card">
+          <img class="dealer-img" src="https://www.shutterstock.com/shutterstock/videos/3399076957/thumb/1.jpg?ip=x480" alt="">
+          <div class="dealer-body">
+            <h5>Suzuki South Motors</h5>
+            <p><strong>Brand:</strong> Suzuki</p>
+            <p><strong>Phone:</strong> +92 21 33445566</p>
+            <p><strong>Address:</strong> Korangi Road, Karachi</p>
+
+            <div class="map-box">
+              <iframe src="https://www.google.com/maps?q=Pak+Suzuki+Motors+Karachi&output=embed"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+    <!-- LAHORE DEALERS -->
+    <h3 class="section-title">Lahore Dealers</h3>
+    <div class="row g-4">
+
+      <div class="col-md-4">
+        <div class="dealer-card">
+          <img class="dealer-img" src="https://www.shutterstock.com/image-photo/khmelnytskyi-ukraine-april-16-2025-600w-2616863597.jpg" alt="">
+          <div class="dealer-body">
+            <h5>Toyota Garden Motors</h5>
+            <p><strong>Brand:</strong> Toyota</p>
+            <p><strong>Phone:</strong> +92 42 35678900</p>
+            <p><strong>Address:</strong> Garden Town, Lahore</p>
+
+            <div class="map-box">
+              <iframe src="https://www.google.com/maps?q=Toyota+Garden+Motors+Lahore&output=embed"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="dealer-card">
+          <img class="dealer-img" src="https://media.gettyimages.com/id/2243019867/photo/honda-cars-showroom-in-tokyo-japan.jpg?s=170667a&w=gi&k=20&c=YVlvMuJ3pdO_B9joC0TDJ_syXK198JaWh6Tz50quLCU=" alt="">
+          <div class="dealer-body">
+            <h5>Honda Point Lahore</h5>
+            <p><strong>Brand:</strong> Honda</p>
+            <p><strong>Phone:</strong> +92 42 35712345</p>
+            <p><strong>Address:</strong> Ferozepur Road, Lahore</p>
+
+            <div class="map-box">
+              <iframe src="https://www.google.com/maps?q=Honda+Point+Lahore&output=embed"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="dealer-card">
+          <img class="dealer-img" src="https://www.shutterstock.com/image-photo/kazan-russia-april-04-2023-600w-2524003263.jpg" alt="">
+          <div class="dealer-body">
+            <h5>Kia Motors Lahore</h5>
+            <p><strong>Brand:</strong> Kia</p>
+            <p><strong>Phone:</strong> +92 42 32244567</p>
+            <p><strong>Address:</strong> Gulberg III, Lahore</p>
+
+            <div class="map-box">
+              <iframe src="https://www.google.com/maps?q=Kia+Motors+Lahore&output=embed"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+    <!-- ISLAMABAD DEALERS -->
+    <h3 class="section-title">Islamabad Dealers</h3>
+    <div class="row g-4">
+
+      <div class="col-md-4">
+        <div class="dealer-card">
+          <img class="dealer-img" src="https://www.shutterstock.com/image-photo/toyota-car-dealership-building-cars-260nw-2293020801.jpg" alt="">
+          <div class="dealer-body">
+            <h5>Toyota Capital Motors</h5>
+            <p><strong>Brand:</strong> Toyota</p>
+            <p><strong>Phone:</strong> +92 51 44332211</p>
+            <p><strong>Address:</strong> I-9 Industrial Area, Islamabad</p>
+
+            <div class="map-box">
+              <iframe src="https://www.google.com/maps?q=Toyota+Capital+Motors+Islamabad&output=embed"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="dealer-card">
+          <img class="dealer-img" src="https://www.shutterstock.com/image-photo/ottawa-canada-07052024-honda-dealership-600w-2487913283.jpg" alt="">
+          <div class="dealer-body">
+            <h5>Honda Classic Motors</h5>
+            <p><strong>Brand:</strong> Honda</p>
+            <p><strong>Phone:</strong> +92 51 33445577</p>
+            <p><strong>Address:</strong> Blue Area, Islamabad</p>
+
+            <div class="map-box">
+              <iframe src="https://www.google.com/maps?q=Honda+Classic+Motors+Islamabad&output=embed"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="dealer-card">
+          <img class="dealer-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6R5fLeXr4I5CHdinW6ARZbWW1EzUToMqp1w&s" alt="">
+          <div class="dealer-body">
+            <h5>Suzuki Islamabad Motors</h5>
+            <p><strong>Brand:</strong> Suzuki</p>
+            <p><strong>Phone:</strong> +92 51 44221155</p>
+            <p><strong>Address:</strong> Kashmir Highway, Islamabad</p>
+
+            <div class="map-box">
+              <iframe src="https://www.google.com/maps?q=Suzuki+Islamabad+Motors&output=embed"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<footer class="py-4 text-center text-muted">
+  <small>© <span id="year"></span> AutoWorld — Dealers</small>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
